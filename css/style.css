@@ -2,18 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}/* COMMON */
+}/* common */
 body {
     width: 100vw;
-    height: 100vh;
-    background-color: bisque;
+    height: 200vh;
+    /* background: rgb(255,255,255); */
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(180,131,7,1) 50%,rgba(255,255,255,1) 100% );
 }
 
 header {
     width: 100%;
-    height: 100px;
 }
-/* NAV  */
+/* header  */
 #logo {
     height: 100px;
 }
@@ -25,7 +25,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding:0 100px;
-    background-color: rgb(254, 187, 62);
+    background-color: #881137;
 }
 
 .logo {
@@ -41,7 +41,7 @@ nav {
     position:absolute;
     top:0;
     left: 20px;
-    color: red;
+    color: white;
 }
 
 .user {
@@ -57,9 +57,9 @@ nav {
 }
 
 .jumbo {
-    height: 600px;
+    height: 500px;
     width:80%;
-    margin: 0 auto;
+    margin: 0 auto 100px;
     background-image:url("../img/banner.jpg");
     background-size: contain;
     background-position: center;
@@ -76,4 +76,55 @@ nav {
 .jumbo h2 {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(20, 15, 3);
+}
+
+/* main */
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.card {
+    margin: 30px 50px;
+    height: 400px;
+    padding:0 20px;
+    width:calc(100% / 4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    box-shadow: 10px 10px 10px 5px black;
+    background-color: white;
+    font-size: .6rem;
+    
+}
+
+.card div{
+    height:80px;
+    width: 80%;
+}
+
+.card>div h1 {
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    resize: horizontal;
+}
+
+.card>div h3 {
+    padding: 10px 0;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    color: red;
+}
+
+.card > img {
+    height: 200px;
+    width: 200px;
 }

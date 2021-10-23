@@ -1,6 +1,6 @@
 <?php 
 
-    $data = [
+    $dataProdutcs = [
         [
             "productId" => "GII32NJT7XA",
             "country" => "Austria",

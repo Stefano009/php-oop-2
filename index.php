@@ -33,8 +33,55 @@
         </div>
     </header>
     <main>
-        <div class="card">
+        <div class="container">
+            <?php
+                require_once ('./classes/product.php');
+                require_once ('./data/stacks.php');
+                $productId=[];
+                $products=[];
+                
+                foreach ($dataProdutcs as $key => $product) {
+                    $productId[] = $product['productId'];
+                }
 
+                // $products = [
+                //     new Product($productId[0]),
+                //     new Product($productId[1]),
+                //     new Product($productId[2]),
+                //     new Product($productId[3]),
+                //     new Product($productId[4])
+                // ];
+                foreach ($productId as $key => $item){
+                    $products[] = new Product($item);
+                
+            ?>
+            <div class="card">
+                <div>
+                    <h1>
+                        <?php
+                            echo $products[$key]->name               
+                        ?>
+                    </h1>
+                </div>
+                <img src="./img/<?php
+                 echo $products[$key]->productPhoto
+                 ?>.jpg" alt="monitor">
+                <div>
+                    <h3>
+                        price <?php
+                        echo $products[$key]->price
+                        ?>€ 
+                    </h3>
+                </div>
+                <div>
+                    <button>
+                        aggiungi al carrello
+                    </button>
+                </div>
+            </div>       
+            <?php
+                }
+            ?>     
         </div>
     </main>
     <footer>
