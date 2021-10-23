@@ -1,16 +1,16 @@
 <?php
     class User {
-        protected $name;
-        protected $lastname;
+        public $name;
+        public $lastname;
         public $username;
-        protected $email;
+        public $email;
         
-        function __construct($_name, $_lastname, $_username, $_email) {
-            $this->$name = $_name;
-            $this->$lastname = $_lastname;
-            $this->$username = $_username;            
-            $this->email = $_email;
-        }
+        // function __construct($_name, $_lastname, $_username, $_email) {
+        //     $this->$name = $_name;
+        //     $this->$lastname = $_lastname;
+        //     $this->$username = $_username;            
+        //     $this->email = $_email;
+        // }
 
         public function setUsername($_username){
             $this->$username =  $_username;

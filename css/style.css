@@ -78,6 +78,20 @@ nav {
     -webkit-text-stroke-color: rgb(20, 15, 3);
 }
 
+form {
+    width: 400px;
+}
+.btn {
+    display:inline-block;
+    width: 100px;
+    height:30px;
+    background-color: rgb(88, 75, 0);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+}
 /* main */
 
 .container {

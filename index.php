@@ -1,3 +1,19 @@
+<?php 
+            
+            require_once ('./classes/user.php');
+            require_once ('./classes/premium.php');
+            // $premium = new Premium();
+            // $premium->name = 'stefano';
+            // $premium->lastname = 'Funaro';
+            // $premium->username = 'Batman';
+            // $premium->email = 'stefano@gmail.com';
+            // $premium->setPremiumLvl('Silver');
+            $user = new User();
+            $user->name = 'stefano';
+            $user->lastname = 'Funaro';
+            $user->username = 'Povero';
+            $user->email = 'stefano@gmail.com';
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +35,28 @@
             <h2>FAKE</h2>
             <img id="logo" src="./img/logo.png" alt="fakezon">
             </div>
+            <!-- login -->
+           
             <div class="user">
                 <h2>
-                    Username
+                    <?php 
+                    if(isset($premium)){
+                        echo $premium->username;
+                    }
+                    if(isset($user)){
+                        echo $user->username;
+                    }
+                        // var_dump($premium);
+                        
+                    ?>
                 </h2>
-                <i class="fas fa-shopping-cart"></i>
+                <div>
+                    <i class="fas fa-shopping-cart"></i>
+                    <div>
+
+                    </div>
+                </div>
+                
             </div>
         </nav>
         <div class="jumbo">
@@ -37,6 +70,7 @@
             <?php
                 require_once ('./classes/product.php');
                 require_once ('./data/stacks.php');
+                
                 $productId=[];
                 $products=[];
                 
@@ -69,8 +103,12 @@
                 <div>
                     <h3>
                         price <?php
-                        echo $products[$key]->price
-                        ?>€ 
+                        echo $products[$key]->price . '€' . '</br>';
+                        // echo $premium->getSconto();
+                        if(isset($premium)){
+                        echo 'Sconto Premium' . ' ' . $products[$key]->price * $premium->getSconto() /100 . '€';
+                        }
+                        ?>
                     </h3>
                 </div>
                 <div>

@@ -20,7 +20,7 @@
             } 
             elseif ($_productId == 'TTB17LMD4XC') {
                 $this->name = 'Megaport PC-Gaming Intel Core i7-11700F • GeForce RTX 3060Ti 8GB • 16 GB DDR4 • 480GB SSD • 1TB HDD • Windows 10 • WelseiFi • PC da gaming';
-                $this->price = 1.699;
+                $this->price = 1699;
                 $this->productPhoto = 'tower';
             } 
             elseif ($_productId == 'MIK34NCF7GK'){

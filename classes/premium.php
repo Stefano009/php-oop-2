@@ -1,27 +1,26 @@
 <?php
     require_once 'user.php';
     
-    class Premium extends user {
-        protected $premiumLvl;
+    class Premium extends User {
+        public $premiumLvl;
+        public $sconto;
 
-        function __construct($_premiumLvl){
-            $this->premiumLvl = $_premiumLvl;
-        }
+        // function __construct($_premiumLvl){
+            
+        //     $this->premiumLvl = $_premiumLvl;
+        // }
 
         public function setPremiumLvl($_premiumLvl){
             $this->premiumLvl = $_premiumLvl;
         }
 
-        private function getPremiumLvl($_premiumLvl){
-            return $this->premiumLvl;
-        }
 
         public function getSconto() {
-            if (getPremiumLvl() === 'Silver'){
-                return 20;
-            } elseif (getPremiumLvl() === 'Gold') {
-                return 35;
-            } else {
+            if ($this->premiumLvl === 'Silver'){
+                return 80;
+            } elseif ($this->premiumLvl === 'Gold') {
+                return 65;
+            } elseif  ($this->premiumLvl === 'Platinum') {
                 return 50;
             }
         }
