@@ -2,17 +2,24 @@
             
             require_once ('./classes/user.php');
             require_once ('./classes/premium.php');
-            // $premium = new Premium();
-            // $premium->name = 'stefano';
-            // $premium->lastname = 'Funaro';
-            // $premium->username = 'Batman';
-            // $premium->email = 'stefano@gmail.com';
-            // $premium->setPremiumLvl('Silver');
-            // $user = new User();
-            // $user->name = 'stefano';
-            // $user->lastname = 'Funaro';
-            // $user->username = 'Bruce Wain';
-            // $user->email = 'stefano@gmail.com';
+            require_once ('./classes/credit.php');
+            $premium = new Premium();
+            $premium->name = $_GET['namePremium'];
+            $premium->lastname = $_GET['lastNamePremium'];
+            $premium->username = $_GET['usernamePremium'];
+            $premium->email = $_GET['emailPremium'];
+            $premium->setPremiumLvl($_GET['premiumLvl']);
+            $user = new User();
+            $user->name = $_GET['name'];
+            $user->lastname = $_GET['lastname'];
+            $user->username = $_GET['username'];
+            $user->email = $_GET['email'];
+            try{ 
+                $creditCard = new CreditCard($_GET['pippo'], $_GET['date'], $_GET['CCV']);
+            } catch (Exception $e) {
+                echo 'Eccezione:' . $e->getMessage();
+            }
+            $premium->insertCreditCard($creditCard);
         ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +32,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>php-oop-2</title>
-    <?php require_once ('./classes/require.php') ?>
+    <?php require_once ('./classes/credit.php') ?>
 </head>
 <body>
  <div id="root" class="wrapper">
@@ -37,13 +44,13 @@
             </div>
             <!-- login -->
            
-            <div class="user">
+            <div @click="goToForm" class="user">
                 <h2>
                     <?php 
-                    if(isset($premium)){
+                    if($premium->name != NULL){
                         echo $premium->username;
                     }
-                    elseif(isset($user)){
+                    elseif($user->name != NULL){
                         echo $user->username;
                     }else {
                         echo 'Effettuare login';
@@ -125,7 +132,9 @@
         </div>
     </main>
     <footer>
-
+            <?php 
+               var_dump($premium);
+            ?>
     </footer>
  </div>
 <!-- calling my js file -->

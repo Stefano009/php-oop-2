@@ -3,7 +3,9 @@
     
     class Premium extends User {
         public $premiumLvl;
-        public $sconto;
+        public $code;
+        public $expireDate;
+        public $backCode;
 
         // function __construct($_premiumLvl){
             
@@ -13,7 +15,12 @@
         public function setPremiumLvl($_premiumLvl){
             $this->premiumLvl = $_premiumLvl;
         }
-
+        
+        public function insertCreditCard($_c){
+            $this->code = $_c->code;
+            $this->expireDate = $_c->expireDate;
+            $this->backCode = $_c->backCode;
+        }
 
         public function getSconto() {
             if ($this->premiumLvl === 'Silver'){

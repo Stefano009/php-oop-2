@@ -48,11 +48,15 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width:50%
+    width:50%;
 }
 
 .user i {
     padding: 0 20px;
+    cursor: pointer;
+}
+
+.user h2 {
     cursor: pointer;
 }
 
