@@ -8,11 +8,11 @@
             // $premium->username = 'Batman';
             // $premium->email = 'stefano@gmail.com';
             // $premium->setPremiumLvl('Silver');
-            $user = new User();
-            $user->name = 'stefano';
-            $user->lastname = 'Funaro';
-            $user->username = 'Povero';
-            $user->email = 'stefano@gmail.com';
+            // $user = new User();
+            // $user->name = 'stefano';
+            // $user->lastname = 'Funaro';
+            // $user->username = 'Bruce Wain';
+            // $user->email = 'stefano@gmail.com';
         ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,8 +43,10 @@
                     if(isset($premium)){
                         echo $premium->username;
                     }
-                    if(isset($user)){
+                    elseif(isset($user)){
                         echo $user->username;
+                    }else {
+                        echo 'Effettuare login';
                     }
                         // var_dump($premium);
                         
