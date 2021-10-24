@@ -114,7 +114,7 @@
                         price <?php
                         echo $products[$key]->price . '€' . '</br>';
                         // echo $premium->getSconto();
-                        if(isset($premium)){
+                        if($premium->premiumLvl != NULL){
                         echo 'Sconto Premium' . ' ' . $products[$key]->price * $premium->getSconto() /100 . '€';
                         }
                         ?>
@@ -133,7 +133,7 @@
     </main>
     <footer>
             <?php 
-               var_dump($premium);
+            //    var_dump($premium);
             ?>
     </footer>
  </div>
