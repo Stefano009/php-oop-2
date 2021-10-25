@@ -15,3 +15,8 @@
     se vuoi registrarti come utente premium clicca qui
 </h1>
 </a>
+
+<?php 
+
+    echo date('d/m/y');
+?>

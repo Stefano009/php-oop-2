@@ -3,9 +3,7 @@
     
     class Premium extends User {
         public $premiumLvl;
-        public $code;
-        public $expireDate;
-        public $backCode;
+        public $cards= [];
 
         // function __construct($_premiumLvl){
             
@@ -17,9 +15,7 @@
         }
         
         public function insertCreditCard($_c){
-            $this->code = $_c->code;
-            $this->expireDate = $_c->expireDate;
-            $this->backCode = $_c->backCode;
+            $this->cards [] = $_c;
         }
 
         public function getSconto() {

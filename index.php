@@ -20,6 +20,8 @@
                 echo 'Eccezione:' . $e->getMessage();
             }
             $premium->insertCreditCard($creditCard);
+            $premium->insertCreditCard($creditCard);
+            $premium->insertCreditCard($creditCard);
         ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,7 +135,7 @@
     </main>
     <footer>
             <?php 
-            //    var_dump($premium);
+               var_dump($premium);
             ?>
     </footer>
  </div>
